@@ -1,4 +1,4 @@
-# PIC GALLERY — by Pranav
+# PIC GALLERY — by Pranavkajagar
 
 **CodeAlpha · Task 01**
 
