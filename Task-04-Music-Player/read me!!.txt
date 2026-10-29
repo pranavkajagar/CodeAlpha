@@ -1,0 +1,8 @@
+to run the music player
+run these cmd in powershell
+	cd E:\codealpha\Task-04-Music-Player
+	python -m http.server 8000
+then go to your browser and paste this 👇
+	http://localhost:8000
+
+thank you.
