@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PIC GALLERY by Pranav — a clean image gallery of cars, bikes, nature and anime. CodeAlpha Task 01.">
+  <meta name="theme-color" content="#f3eee4">
+  <title>PIC GALLERY — by Pranav</title>
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/fraunces-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+  <a class="skip-link" href="#gallery">Skip to the gallery</a>
+
+  <header class="site-header">
+    <a class="brand" href="#top">
+      <span class="brand__name">PIC GALLERY</span>
+      <span class="brand__by">by Pranav</span>
+    </a>
+    <p class="header-meta">
+      <span class="header-meta__dot" aria-hidden="true"></span>
+      CodeAlpha · Task 01
+    </p>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow">Cars <span class="eyebrow__dot" aria-hidden="true">·</span> Bikes <span class="eyebrow__dot" aria-hidden="true">·</span> Nature <span class="eyebrow__dot" aria-hidden="true">·</span> Anime</p>
+      <h1 class="hero__title" id="hero-title">PIC <em>GALLERY</em></h1>
+      <p class="hero__by">by Pranav</p>
+    </section>
+
+    <section class="gallery" id="gallery" aria-labelledby="gallery-title">
+      <h2 class="sr-only" id="gallery-title">Photo gallery</h2>
+
+      <div class="toolbar">
+        <div class="container toolbar__inner">
+          <form class="search" id="searchForm" role="search" aria-label="Search photos">
+            <span class="search__icon" aria-hidden="true">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg>
+            </span>
+            <input
+              class="search__input"
+              id="searchInput"
+              type="search"
+              placeholder="Search photos"
+              autocomplete="off"
+              spellcheck="false"
+              aria-label="Search photos by title, category or keyword"
+            >
+            <button class="search__clear" id="searchClear" type="button" aria-label="Clear search" hidden>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+            </button>
+          </form>
+
+          <div class="filters" id="filters" role="group" aria-label="Filter images by category">
+            <button class="chip is-active" type="button" data-filter="all" aria-pressed="true">
+              All <span class="chip__count">16</span>
+            </button>
+            <button class="chip" type="button" data-filter="cars" aria-pressed="false">
+              Cars <span class="chip__count">4</span>
+            </button>
+            <button class="chip" type="button" data-filter="bikes" aria-pressed="false">
+              Bikes <span class="chip__count">4</span>
+            </button>
+            <button class="chip" type="button" data-filter="nature" aria-pressed="false">
+              Nature <span class="chip__count">4</span>
+            </button>
+            <button class="chip" type="button" data-filter="anime" aria-pressed="false">
+              Anime <span class="chip__count">4</span>
+            </button>
+          </div>
+
+          <div class="toolbar__end">
+            <p class="frame-count">
+              <span class="frame-count__current" id="visibleCount">16</span>
+              <span class="frame-count__total"> / 16 photos</span>
+            </p>
+            <button class="mono" id="monoToggle" type="button" aria-pressed="false" aria-label="Toggle monochrome image filter">
+              <span class="mono__dot" aria-hidden="true"></span>
+              <span class="mono__text">Mono</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="grid" id="grid"></div>
+
+        <div class="empty" id="emptyState" hidden>
+          <span class="empty__icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg>
+          </span>
+          <p class="empty__title">No photos found</p>
+          <p class="empty__text">Try a different word or category.</p>
+          <button class="empty__reset" id="emptyReset" type="button">Clear search</button>
+        </div>
+
+        <p class="sr-only" id="searchStatus" aria-live="polite">16 photos</p>
+
+        <noscript>
+          <p class="no-js">This gallery is rendered with JavaScript. Please enable it to view the images.</p>
+        </noscript>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer__inner">
+      <p class="footer__brand">PIC GALLERY<span>by Pranav</span></p>
+      <div class="footer__row">
+        <span>Photos via <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></span>
+        <span>Anime art via <a href="https://commons.wikimedia.org" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a></span>
+        <a class="footer__top" href="#top">Back to top <span aria-hidden="true">↑</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lbTitle" hidden>
+    <span class="lightbox__progress" aria-hidden="true"><span id="lbProgress"></span></span>
+
+    <div class="lightbox__panel">
+      <div class="lightbox__top">
+        <div class="lightbox__id">
+          <span class="lightbox__counter" id="lbCounter" aria-live="polite">01 / 16</span>
+          <span class="lightbox__collection" id="lbCollection">Cars</span>
+        </div>
+
+        <p class="lightbox__hint">Use&nbsp;←&nbsp;→&nbsp;to browse&nbsp;·&nbsp;Esc&nbsp;to close</p>
+
+        <button class="lightbox__close" id="lbClose" type="button" aria-label="Close image viewer">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+            <path d="M5 5l14 14M19 5L5 19"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="lightbox__viewer" id="lbViewer">
+        <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" type="button" aria-label="Previous image">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 5l-7 7 7 7"/>
+          </svg>
+        </button>
+
+        <figure class="lightbox__figure" id="lbFigure">
+          <img class="lightbox__img" id="lbImage" alt="" draggable="false" decoding="async">
+        </figure>
+
+        <button class="lightbox__nav lightbox__nav--next" id="lbNext" type="button" aria-label="Next image">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="lightbox__bottom">
+        <div class="lightbox__info">
+          <p class="lightbox__meta" id="lbMeta">Alps, Switzerland · 2026</p>
+          <h2 class="lightbox__title" id="lbTitle">Night Drive</h2>
+        </div>
+
+        <div class="lightbox__film" id="lbFilm" role="group" aria-label="Images in this category"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
