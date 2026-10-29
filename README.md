@@ -1,75 +1,95 @@
-# PIC GALLERY — by Pranavkajagar
+# CodeAlpha Internship Projects
+### By Pranav Kajagar
 
-**CodeAlpha · Task 01**
+This repository contains three web development projects completed as part of my CodeAlpha internship tasks. The projects are built using HTML, CSS, and JavaScript.
 
-A responsive image gallery built with plain HTML, CSS and JavaScript. All images and fonts are stored locally, so the gallery works offline.
+## Projects
 
-## Features
+### Task 01 — PIC Gallery
 
-- **Search** — filter by title, category, place or tag (e.g. `porsche`, `forest`, `bike`). Press `/` to focus the search box.
-- **Categories** — Cars, Bikes, Nature and Anime, with live counts.
-- **Lightbox** — previous/next controls, thumbnail strip, image counter and progress bar.
-- **Keyboard** — `←` / `→` to browse, `Esc` to close, `Tab` cycles inside the dialog.
-- **Swipe / drag** — navigate images on touch screens or with a mouse.
-- **Hover effects** — slow zoom, gradient reveal, caption and view badge.
-- **Monochrome mode** — one-click grayscale treatment.
-- **Responsive layout** — 4 columns on desktop, 3 on laptop, 2 on tablet, 1 on phones.
-- **Accessibility** — semantic markup, focus styles, ARIA labels, focus trapping, background `inert` and reduced-motion support.
+A responsive image gallery that displays images in different categories with interactive browsing features.
 
-## Running
+**Features**
+- Search images by title, category, place, or tag.
+- Filter images by Cars, Bikes, Nature, and Anime.
+- Interactive lightbox with next and previous controls.
+- Keyboard navigation and touch gestures.
+- Responsive design for desktop, tablet, and mobile devices.
 
-Open `index.html` in any modern browser. No build step is needed.
+**How to run:** Open the project's `index.html` file in a modern web browser.
 
-For a local server:
+### Task 02 — Calculator
 
-```bash
-python -m http.server 8080
+A modern, responsive calculator built using HTML, CSS, and JavaScript.
+
+**Features**
+- Basic arithmetic operations.
+- Addition, subtraction, multiplication, and division.
+- Percentage calculation.
+- Clear and delete functions.
+- Keyboard input support.
+- Responsive user interface.
+
+**How to run:** Open the Calculator project's `index.html` file in a modern web browser.
+
+### Task 04 — Music Player
+
+A music player web application with playback controls and a playlist.
+
+**Features**
+- Play and pause songs.
+- Previous and next track controls.
+- Playlist with song titles and artist information.
+- Playback progress and volume controls.
+- Shuffle and repeat options.
+- Responsive dark-themed interface.
+
+**Demo songs:** Two demo songs are included for testing and demonstration. Additional songs can be added by placing MP3 files in the `songs` folder and updating `songs.json` with the corresponding title, artist, and file path.
+
+**How to run:**
+1. Open a terminal in the Music Player project folder.
+2. Run the following command:
+
+   `python -m http.server 8000`
+
+3. Open `http://localhost:8000` in your browser.
+
+Python is used to run a local server so the playlist file can load correctly.
+
+## Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript
+- Python's built-in HTTP server for local Music Player testing
+
+## Project Structure
+
+```text
+CodeAlpha/
+├── README.md
+├── Task-01-PIC-GALLERY/
+│   ├── index.html
+│   ├── css/
+│   ├── js/
+│   └── assets/
+├── Task-02-Calculator/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+└── Task-04-Music-Player/
+    ├── index.html
+    ├── style.css
+    ├── script.js
+    ├── songs.json
+    ├── songs/
+    └── README.md
 ```
 
-Then visit `http://localhost:8080`.
+*Note: The folder structure above is illustrative. Actual files may vary.*
 
-## Project structure
+## Author
 
-```
-codealpha/
-├── index.html
-├── css/
-│   └── style.css
-├── js/
-│   └── app.js
-├── assets/
-│   ├── favicon.svg
-│   ├── fonts/
-│   │   ├── fraunces-normal.woff2
-│   │   ├── fraunces-italic.woff2
-│   │   └── inter-normal.woff2
-│   └── images/            # 16 images
-└── README.md
-```
+**Pranav Kajagar**
 
-## Customising
-
-Edit the `photos` array at the top of `js/app.js`:
-
-```js
-{
-  id: "cars-05",
-  src: "assets/images/cars-05.jpg",
-  title: "New Frame",
-  category: "cars",          // cars | bikes | nature | anime
-  place: "Somewhere",
-  year: 2026,
-  width: 1400,
-  height: 933,
-  alt: "Description of the image",
-  tags: ["car", "sports car", "road"]
-}
-```
-
-Category counts and filter buttons update automatically from the data.
-
-## Credits
-
-- Car, bike and nature photography: [Unsplash](https://unsplash.com)
-- Anime portraits: [Artbreeder](https://www.artbreeder.com) images via [Wikimedia Commons](https://commons.wikimedia.org), public domain
-- Typefaces: [Fraunces](https://fonts.google.com/specimen/Fraunces) and [Inter](https://fonts.google.com/specimen/Inter), SIL Open Font License
+CodeAlpha Internship Projects
