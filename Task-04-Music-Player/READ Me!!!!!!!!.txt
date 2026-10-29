@@ -1,0 +1,25 @@
+Note:
+ the music player currently includes only 2 demo songs for demonstration
+You can add as many songs as you want by placing additional MP3 files in the songs folder. Make sure to update songs.json with the new song details and file paths so that the songs appear in the playlist.
+
+The project is designed to support multiple songs, and you can customize the playlist with your own music files.
+
+to RUN the music player
+run these cmd in powershell
+	cd E:\codealpha\Task-04-Music-Player
+	python -m http.server 8000
+then go to your browser and paste this 👇
+	http://localhost:8000
+
+to update the sngs list
+STEPS:
+1. add song in folder
+2. open songs.json
+3. {
+  "title": "My Song",
+  "artist": "My Artist",
+  "src": "songs/my-song.mp3"
+   }
+4. refresh and run
+
+thank you.
